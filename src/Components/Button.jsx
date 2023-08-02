@@ -2,14 +2,12 @@ import React from "react";
 import { styled } from "styled-components";
 
 const Button = (props) => {
-  return (
-    <ButtonLayout disabled={props.disabled}>{props.children}</ButtonLayout>
-  );
+  return <ButtonLayout {...props}>{props.children}</ButtonLayout>;
 };
 
 const ButtonLayout = styled.button`
-  width: 480px;
-  height: 60px;
+  width: ${(props) => props.width || "480px"};
+  height: ${(props) => props.height || "60px"};
   border-radius: 5px;
   background-color: ${(props) =>
     props.disabled ? "var(--light-gray)" : "var(--primary)"};
