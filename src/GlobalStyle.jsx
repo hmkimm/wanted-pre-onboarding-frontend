@@ -27,9 +27,6 @@ button {
 }
 
 input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     box-shadow: none;
     border: none;
     border-radius: 0;
@@ -39,6 +36,12 @@ input {
     &:focus {
       outline: none;
     }
+  }
+
+  ul,li {
+    margin: 0;
+    padding: 0;
+  list-style: none;
   }
 `;
 
