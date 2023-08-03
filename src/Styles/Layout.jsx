@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const LayoutStyle = css`
   width: 550px;
-  height: 352px;
+  min-height: 352px;
   margin: 100px auto;
   padding: 35px;
   box-sizing: border-box;
