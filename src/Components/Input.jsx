@@ -11,10 +11,10 @@ const Input = (props) => {
 
 const InputStyle = styled.input`
   width: ${(props) => props.width || "480px"};
-  height: 60px;
-  padding: 20px;
+  height: ${(props) => props.height || "60px"};
+  padding: ${(props) => props.$padding || "20px"};
   margin-bottom: ${(props) => props.$mb || "20px"};
-  margin : ${(props) => props.margin};
+  margin: ${(props) => props.$margin};
   border-bottom: 1px solid var(--light-gray);
   font-size: var(--md);
 
