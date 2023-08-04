@@ -14,7 +14,7 @@ const ButtonLayout = styled.button`
   background-color: ${(props) => props.bg};
   color: white;
   font-size: var(--md);
-  margin-bottom: ${(props) => props.mb};
+  margin-bottom: ${(props) => props.$mb};
   margin: ${(props) => props.$margin};
 `;
 export default Button;
