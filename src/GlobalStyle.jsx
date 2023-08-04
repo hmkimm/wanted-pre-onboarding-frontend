@@ -24,6 +24,10 @@ button {
   border: none;
   color: inherit;
   background-color: transparent;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 input {
