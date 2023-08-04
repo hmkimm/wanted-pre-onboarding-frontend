@@ -1,5 +1,5 @@
 import URL from "./URL";
-import axios from "axios";
+// import axios from "axios";
 
 const SignUpAPI = async (inputs) => {
   try {
@@ -10,12 +10,12 @@ const SignUpAPI = async (inputs) => {
       },
       body: JSON.stringify(inputs),
     });
-    if (!res.ok) {
-      throw new Error("API 호출이 실패하였습니다.");
-    }
+    // if (!res.ok) {
+    //   throw new Error("API 호출이 실패하였습니다.");
+    // }
 
-    const result = await res.json();
-    return result;
+    const data = await res.json();
+    return data;
   } catch (error) {
     console.error("api 통신 오류", error);
     throw error;

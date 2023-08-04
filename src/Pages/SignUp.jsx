@@ -6,6 +6,7 @@ import Input from "../Components/Input";
 import Button from "../Components/Button";
 
 import SignUpAPI from "../Utils/SignUpAPI";
+import { FormLayout } from "../Styles/Layout";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -29,14 +30,23 @@ const SignUp = () => {
       ...prev,
       [name]: value,
     }));
+    console.log(inputs);
   };
 
   useEffect(() => {
     setIsValidSignUp(inputs.email.includes("@") && inputs.password.length >= 8);
   }, [inputs]);
 
+  useEffect(() => {
+    const storedToken = window.localStorage.getItem("token");
+
+    if (storedToken) {
+      navigate("/todo");
+    }
+  }, []);
+
   return (
-    <SignUpLayout onSubmit={handleSubmit}>
+    <FormLayout onSubmit={handleSubmit}>
       <Input
         name="email"
         value={inputs.email}
@@ -55,7 +65,7 @@ const SignUp = () => {
       <Button data-testid="signup-button" disabled={!isValidSignUp}>
         회원가입
       </Button>
-    </SignUpLayout>
+    </FormLayout>
   );
 };
 
