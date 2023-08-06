@@ -10,7 +10,6 @@ import { FormLayout } from "../Styles/Layout";
 const SignIn = () => {
   const navigate = useNavigate();
   const [isValidLogIn, setIsValidLogIn] = useState(false);
-  const [token, setToken] = useState("");
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -29,8 +28,11 @@ const SignIn = () => {
     e.preventDefault();
 
     const result = await SignInAPI(inputs);
-    setToken(result.access_token);
-    window.localStorage.setItem("token", result.access_token);
+    console.log(result);
+
+    const token = result.access_token
+    window.localStorage.setItem("token", JSON.stringify(token));
+
     navigate("/todo");
   };
 
