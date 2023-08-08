@@ -1,17 +1,16 @@
+import axios from "axios";
 import URL from "./URL";
 
 const CreateToDoAPI = async (token, input) => {
   try {
-    const res = await fetch(`${URL}/todos`, {
-      method: "POST",
+    const res = await axios.post(`${URL}/todos`, input, {
       headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-type': 'application/json',
-        },
-      body: JSON.stringify(input),
+        Authorization: `Bearer ${token}`,
+        "Content-type": "application/json",
+      },
     });
 
-    const data = await res.json();
+    const data = res.data;
     console.log(data);
 
     return data;

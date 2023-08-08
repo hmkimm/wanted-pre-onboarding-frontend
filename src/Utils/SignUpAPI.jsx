@@ -1,20 +1,16 @@
 import URL from "./URL";
-// import axios from "axios";
+import axios from "axios";
 
 const SignUpAPI = async (inputs) => {
   try {
-    const res = await fetch(`${URL}/auth/signup`, {
+    const res = await axios.post(`${URL}/auth/signup`, inputs, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(inputs),
     });
-    // if (!res.ok) {
-    //   throw new Error("API 호출이 실패하였습니다.");
-    // }
 
-    const data = await res.json();
+    const data = res.data;
     return data;
   } catch (error) {
     console.error("api 통신 오류", error);
@@ -23,15 +19,3 @@ const SignUpAPI = async (inputs) => {
 };
 export default SignUpAPI;
 
-// const SignUpAPI = async (inputs) => {
-//   try {
-//     const res = await axios.post(`${URL}/auth/signup`, inputs, {
-//       headers: { "Content-Type": "application/json" },
-//     });
-//     console.log(res);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// export default SignUpAPI;

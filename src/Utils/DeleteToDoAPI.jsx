@@ -8,9 +8,7 @@ const DeleteToDoAPI = async (token, TodoID) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    // const result = res.data;
-    // console.log(result);
-    // return result;
+
   } catch (error) {
     console.error("api error", error);
   }
