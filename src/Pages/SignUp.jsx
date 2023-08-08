@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import Input from "../Components/Input";
@@ -69,13 +68,13 @@ const SignUp = () => {
   );
 };
 
-const SignUpLayout = styled.form`
-  width: 550px;
-  height: 352px;
-  margin: 100px auto;
-  padding: 35px;
-  box-sizing: border-box;
-  border: 1px solid var(--light-gray);
-  border-radius: 10px;
-`;
+// const SignUpLayout = styled.form`
+//   width: 550px;
+//   height: 352px;
+//   margin: 100px auto;
+//   padding: 35px;
+//   box-sizing: border-box;
+//   border: 1px solid var(--light-gray);
+//   border-radius: 10px;
+// `;
 export default SignUp;
