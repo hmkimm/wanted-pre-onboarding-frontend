@@ -93,10 +93,6 @@ const ToDo = () => {
     const data = await GetToDoAPI(token);
     const TodoId = data[i]?.id;
     await DeleteToDoAPI(token, TodoId);
-
-    // setTodos((prev) => [...prev, res]);
-    // setTodos([...data]);
-
     data.splice(i, 1);
     setTodos([...data]);
   };
